@@ -1,0 +1,224 @@
+$primary-color: #30f5ff;
+$secondary-color: #3729fe;
+$bg-dark: #1E1E1E;
+$text-color: #FFFFFF;
+
+@mixin centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--register_signup {
+    @include centered();
+
+    .container__left {
+        width: 50%;
+        height: 100%;
+        background-color: $bg-dark;
+        
+        .container__left-images {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+
+            &--first::after,
+            &--second::after,
+            &--third::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.2;
+            }
+
+            &--first::after {
+                background-image: url('/light/light_graph.png');
+                width: 10vh;
+                height: 10vh;
+                top: 10%;
+                left: 5%;
+                transform: rotate(55deg);
+            }
+        
+            &--second::after {
+                background-image: url('/light/calendar.png');
+                width: 12vh;
+                height: 12vh;
+                top: 65%;
+                left: 25%;
+                transform: rotate(22deg);
+            }
+
+            &--third::after {
+                background-image: url('/light/present_graph.png');
+                width: 22vh;
+                height: 22vh;
+                top: 5%;
+                left: 30%;
+                transform: rotate(62deg);
+            }
+        }
+
+        .container__left-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            color: $text-color;
+            font-weight: bold;
+
+            .content__header {
+                margin-top: 10px;
+                width: 70%;
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+                p {
+                    font-size: 1.2rem;
+                    margin-top: 10px;
+                }
+            }
+
+            .content__footer a {
+                background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .container__right {
+        width: 50%;
+        height: 100%;
+        @include centered();
+        padding: 20px;
+        box-sizing: border-box;
+
+        .container__right-form {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            @include centered();
+            flex-direction: column;
+
+            .form__header{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            
+            .form__content{
+                width: 80%;
+                height: 90%;
+                z-index: 3;
+                margin-top: 10px;
+                
+                &-inputs{
+                    @include centered();
+                    flex-direction: column;
+                    gap: 5px;
+                    .forgot-password{
+                        width: 100%;
+                        height: 20%;
+                        @include centered();
+                        justify-content: end;
+                        margin-top: 20px;
+                        a{
+                            background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                &-buttons{
+                    .submit-button{
+                        width: 100%;
+                        background-color: $secondary-color;
+                        color: $text-color;
+                        padding: 8px;
+                        font-weight: bold;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 1s;
+
+                        &:hover{
+                            background-color: $bg-dark;
+                        }
+
+                        &:disabled{
+                            cursor: not-allowed;
+                            opacity: 0.5;
+                            background-color: $bg-dark;
+                        }
+                    }
+                    &-or{
+                        margin-top: 30px;
+                        position: relative;
+                        
+                        .or__line{
+                            width: 100%;
+                            height: 4px;
+                            background: linear-gradient(270deg, #3729fe 0%, #30f5ff 51.1%, #3729fe 100%);
+                            position: absolute;
+                            top: 50%;
+                            left: 0%;
+                            transform: translate(0%, 0%);
+                            z-index: 0;
+                            transition: 1s;
+                            
+                        }
+                        .or__text{
+                            background-color: #FFFFFF;
+                            position: relative;
+                            padding: 2px;
+                            font-weight: bold;
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    .google-button{
+                        padding: 5px;
+                        width: 15%;
+                        border-radius: 15px;
+                        margin-top: 30px;
+                        background-color: #E8E8E8;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+                        transition: 0.5s;
+                        &:hover{
+                            scale: 1.1;
+                        }
+                        &:active{
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .container--register_signup {
+        align-items: center;
+
+        .container__left {
+            display: none;
+        }
+            
+        .container__right {
+            width: 100%;
+            height: 70%;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run start:auth & npm run start:data & npm run start:moderation & npm run start:notifications & npm run start:register & npm run start:socket",
+    "start:auth": "npx nodemon --watch services/auth_service/src --exec npx tsx services/auth_service/src/index.ts",
+    "start:data": "npx nodemon --watch services/data_service/src --exec npx tsx services/data_service/src/index.ts",
+    "start:moderation": "npx nodemon --watch services/moderation_service/src --exec npx tsx services/moderation_service/src/index.ts",
+    "start:notifications": "npx nodemon --watch services/notifications_service/src --exec npx tsx services/notifications_service/src/index.ts",
+    "start:register": "npx nodemon --watch services/register_service/src --exec npx tsx services/register_service/src/index.ts",
+    "start:socket": "npx nodemon --watch services/socket_service/src --exec npx tsx services/socket_service/src/index.ts"
+  },
+  "author": "DequElite",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/pg": "^8.11.11",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-list-endpoints": "^7.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "kafkajs": "^2.2.4",
+    "nodemon": "^3.1.9",
+    "pg": "^8.14.1",
+    "tsx": "^4.19.3"
+  }
+}

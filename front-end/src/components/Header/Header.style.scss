@@ -1,0 +1,22 @@
+@keyframes shake {
+    0% {
+      transform: rotate(0deg); /* Начальное положение */
+    }
+    25% {
+      transform: rotate(-10deg); /* Поворот влево */
+    }
+    50% {
+      transform: rotate(10deg); /* Поворот вправо */
+    }
+    75% {
+      transform: rotate(-10deg); /* Поворот влево */
+    }
+    100% {
+      transform: rotate(0deg); /* Завершающее положение */
+    }
+  }
+  
+  .animate-shake {
+    animation: shake 0.5s ease-in-out; /* Анимация с длительностью 0.5с */
+  }
+  

@@ -1,0 +1,54 @@
+$primary-color: #30f5ff;
+$secondary-color: #3729fe;
+$bg-dark: #1E1E1E;
+$text-color: #FFFFFF;
+
+.forgot_password{
+    width: 50vh;
+    height: 45vh;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.forgot_password__header{
+    h1{
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    p{
+        font-weight: bold;
+        font-size: 1.15rem;
+        color: #6E6E6E;
+    }
+}
+
+.forgot_password__content{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 50px;
+
+    button{
+        width: 100%;
+        background-color: #1F4ACD;
+        padding: 8px;
+        border-radius: 15px;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: 1s;
+
+        &:hover{
+            background-color: $bg-dark;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+            background-color: $bg-dark;
+        }
+    }
+}
